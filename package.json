@@ -1,0 +1,29 @@
+{
+  "name": "create-and-barrel",
+  "version": "1.0.0",
+  "description": "An inventory management application for users to login and see what whiskey they have on hand.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoctorMuch/create-and-barrel.git"
+  },
+  "keywords": [
+    "Heroku"
+  ],
+  "author": "David F Mueth, Patricia Nelson, Darrick Prichett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoctorMuch/create-and-barrel/issues"
+  },
+  "homepage": "https://github.com/DoctorMuch/create-and-barrel#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
+  }
+}
