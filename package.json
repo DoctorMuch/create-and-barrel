@@ -11,7 +11,9 @@
     "url": "git+https://github.com/DoctorMuch/create-and-barrel.git"
   },
   "keywords": [
-    "Heroku", "Express", "database"
+    "Heroku",
+    "Express",
+    "database"
   ],
   "author": "David F Mueth, Patricia Nelson, Darrick Prichett",
   "license": "ISC",
