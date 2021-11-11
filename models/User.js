@@ -22,8 +22,25 @@ User.init(
       validate: {
         isEmail: true
       }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [6]
+      }
     }
-  }
-)
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user'
+  },
+);
+
+module.exports = {User};
+
 
 
