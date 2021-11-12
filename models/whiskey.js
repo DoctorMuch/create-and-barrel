@@ -1,7 +1,7 @@
 const { Model, DataTypes, DECIMAL } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Product extends Model { }
+class Whiskey extends Model { }
 
 Product.init(
     {
@@ -11,7 +11,7 @@ Product.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        product_name: {
+        whiskey_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -21,15 +21,22 @@ Product.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        },
+        price: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                DataTypes: DECIMAL
+            }
+        },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'product'
+        modelName: 'whiskey'
     }
 );
 
-module.exports = Product;
+module.exports = Whiskey;
