@@ -60,7 +60,18 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'That is not the email of a current member!' });
       return;
     }
-    res.json({ user: dbUserData.username, message: 'You are now logged in.' })
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if(!validPassword) {
+      res.status(400).json({ message: 'Password is incorrect. Try again or sign up, if you are not a member.' });
+      return;
+    }
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user: dbUserData.username, message: 'You are now logged in.' })
+    });
   })
   .catch(err => {
     console.log(err);

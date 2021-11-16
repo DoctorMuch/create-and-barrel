@@ -13,11 +13,17 @@
         <nav>
           <a href="/">Home</a>
           <a href="/dash">Dash View</a>
-          <a href="/login">Log In to View</a>
+          <a href="/login">Log On to View</a>
+          <a href="/logout">Log Off</a>
         </nav>
         <h1 class="app-title">
           <a href="/">The Whisk(e)y Barrel</a>
         </h1>
+        {{#if loggedIn}}
+        <div>
+          <a href="/dash">Hello, {{username}}</a>
+        </div>
+        {{/if}}
       </header>
       <main>
         {{{ body }}}
