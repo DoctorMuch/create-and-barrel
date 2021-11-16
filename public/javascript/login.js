@@ -15,6 +15,7 @@ async function loginFormHandler(event) {
    });
    if (response.ok) {
      document.location.replace('/');
+     console.log('You are. doing an amazing job. Keep it up');
    } else {
      alert(response.statusText);
    }
