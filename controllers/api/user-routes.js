@@ -42,7 +42,15 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   User.create(req.body)
-  .then(dbUserData => res.json(dbUserData))
+  .then(dbUserData => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json(dbUserData);
+    });
+  }) 
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -97,6 +105,17 @@ router.put('/:id', (req, res) => {
     res.status(500).json(err);
   })
 });
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.render('/login');
+  }
+})
 
 router.delete('/:id', (req, res) => {
   User.destroy({
