@@ -1,17 +1,12 @@
-// import models
 const User = require('./User');
-const Whiskey = require('./Whiskey');
+const Whiskey = require('./Whiskey')
 
-// Whiskey belongs to User
-Whiskey.belongsTo(User, {
-    foreignKey: 'Whiskey_id'
-})
-// Users have many whiskeys
 User.hasMany(Whiskey, {
-    foreignKey: 'User_id'
+  foreignKey: 'user_id'
 });
 
-module.exports ={
-    User,
-    Whiskey,
-};
+Whiskey.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+module.exports = { User, Whiskey };
