@@ -1,0 +1,20 @@
+ul {
+  list-style: none;
+}
+
+.new-btl {
+  border: solid 2px;
+  width: 40%;
+  text-align: left;
+  padding: 10px 5px;
+}
+
+.login-form,
+.signUp-form {
+  padding: 15px;
+}
+
+#bottle {
+  background-color: rgb(112, 87, 22);
+  color: #ffff;
+}
