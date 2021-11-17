@@ -1,7 +1,19 @@
-<ul class="whiskey-list">
+{{!-- <ul class="whiskey-list">
   {{#each whiskeys as |whiskey|}}
   <li>
     {{>whiskey-info whiskey}}
+  </li>
+  {{/each}}
+</ul> --}}
+
+<ul class="card" style="width: 18rem;">
+  {{#each whiskeys as |whiskey|}}
+  <li class="card-body">
+    {{>whiskey-info whiskey}}
+    {{!-- <h5 class="card-title"></h5>
+    <p class="card-text">{{>whiskey-info whiskey}}</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a> --}}
   </li>
   {{/each}}
 </ul>
