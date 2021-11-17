@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Whiskey } = require('../models');
-const sequelize = require('../config/connection');
+// const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
   Whiskey.findAll({
@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
   .then(dbWhiskeyData => {
     const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
     res.render('homepage', {
-      whiskeys
+      whiskeys,
+      loggedIn: req.session.loggedIn
     });
   })
   .catch(err => {
@@ -30,11 +31,23 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render('login');
 });
 
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
+
+router.get('/dash', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  res.render('/dash', { whiskeys });
+})
 
 module.exports = router;

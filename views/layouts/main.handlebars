@@ -12,9 +12,12 @@
       <header class="hero">
         <nav>
           <a href="/">Home</a>
+          {{#if loggedIn}}
           <a href="/dash">Dash View</a>
+          <a href="/logout" id="logout">Log Off</a>
+          {{else}}
           <a href="/login">Log On to View</a>
-          <a href="/logout">Log Off</a>
+          {{/if}}
         </nav>
         <h1 class="app-title">
           <a href="/">The Whisk(e)y Barrel</a>
@@ -29,5 +32,8 @@
         {{{ body }}}
       </main>
     </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
   </body>
 </html>

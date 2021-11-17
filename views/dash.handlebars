@@ -1,0 +1,20 @@
+<section>
+  <h2>{{username}}'s Barrel Stave</h2>
+
+  <div>
+    
+  </div>
+</section>
+
+{{#if whiskeys.length}}
+<section>
+  <h2>Your Bottles</h2>
+  <ul>
+    {{#each whiskeys as |whiskey|}}
+    <li>
+      {{> whiskey-info whiskey}}
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}

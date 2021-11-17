@@ -12,7 +12,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const hbs = exphbs.create({});
 
 const sess = {
-  secret:'life mars musk',
+  secret: process.env.SESS_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -23,7 +23,7 @@ const sess = {
 
 app.use(session(sess));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
