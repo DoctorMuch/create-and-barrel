@@ -1,10 +1,7 @@
-
-<main class="card border-dark mb-3" style="max-width: 18re  <div class="card-header bg-success border-dark">
-    
-<section>
+<section class="card border-dark mb-3">
   <h2>{{username}}'s Barrel Stave</h2>
 </section>
-<section class="new-btl">
+<section class="card border-dark mb-3 new-btl">
   <h3>Add New Bottle</h3>
   <form class="new-btl-form">
     <div>
@@ -13,7 +10,7 @@
     </div>
     <div>
       <label for="price">Price</label>
-      <input type="number" id="price" />
+      <input type="text" id="price" />
     </div>
     <div>
       <button type="submit">Add Bottle</button>
@@ -23,7 +20,7 @@
 
 {{!-- {{#if whiskeys.length}} --}}
 <section>
-  <h3>Your Bottles</h3>
+  <h3 id="bottle">Your Bottles</h3>
   <ul>
     {{#each whiskeys as |whiskey|}}
     <li>
@@ -35,6 +32,3 @@
 {{!-- {{/if}} --}}
 
 <script src="/javascript/add-bottle.js"></script>
-
-<div class="card-footer bg-success border-dark">Footer</div>
-</main>
