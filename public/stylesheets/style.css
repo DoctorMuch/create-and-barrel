@@ -8,3 +8,8 @@ ul {
   text-align: left;
   padding: 10px 5px;
 }
+
+.login-form,
+.signUp-form {
+  padding: 15px;
+}
