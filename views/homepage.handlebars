@@ -6,9 +6,9 @@
   {{/each}}
 </ul> --}}
 
-<ul class="card" style="width: 18rem;">
+<ul id="whiskeys">
   {{#each whiskeys as |whiskey|}}
-  <li class="card-body">
+  <li>
     {{>whiskey-info whiskey}}
     {{!-- <h5 class="card-title"></h5>
     <p class="card-text">{{>whiskey-info whiskey}}</p>
