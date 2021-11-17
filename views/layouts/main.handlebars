@@ -31,18 +31,21 @@
   <div class="card text-center">
     <nav class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="true" href="/">Home</a>
-        </li>
+        {{#if loggedIn}}
         <li class="nav-item">
           <a class="nav-link" href="/dash">Dash View</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Log In to View</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" id="logout" href="/logout">Log Off</a>
         </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="true" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In to View</a>
+        </li>
+        {{/if}}
       </ul>
     </nav>
     <div class="card-body">
@@ -54,7 +57,9 @@
   <main class="card text-center">
     {{{body}}}
   </main>
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 
