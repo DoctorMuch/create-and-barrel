@@ -1,14 +1,19 @@
 <section>
   <h2>{{username}}'s Barrel Stave</h2>
-
-  <div>
-    
-  </div>
+</section>
+<section class="new-btl">
+  <h3>Add New Bottle</h3>
+  <form class="new-btl-form">
+    <div>
+      <label for="bottle-name">Bottle</label>
+      <input type="text" id="bottle-name" />
+    </div>
+  </form>
 </section>
 
-{{#if whiskeys.length}}
+{{!-- {{#if whiskeys.length}} --}}
 <section>
-  <h2>Your Bottles</h2>
+  <h3>Your Bottles</h3>
   <ul>
     {{#each whiskeys as |whiskey|}}
     <li>
@@ -17,4 +22,4 @@
     {{/each}}
   </ul>
 </section>
-{{/if}}
+{{!-- {{/if}} --}}
