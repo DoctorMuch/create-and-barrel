@@ -29,7 +29,7 @@
     </main>
   </div> --}}
   <div class="card text-center">
-    <div class="card-header">
+    <nav class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link active" aria-current="true" href="/">Home</a>
@@ -40,14 +40,21 @@
         <li class="nav-item">
           <a class="nav-link" href="/login">Log In to View</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="logout" href="/logout">Log Off</a>
+        </li>
       </ul>
-    </div>
+    </nav>
     <div class="card-body">
-      <h5 class="card-title">The Whisk(e)y Barrel</h5>
+      <h1 class="card-title">The Whisk(e)y Barrel</h1>
       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
+  <main class="card text-center">
+    {{{body}}}
+  </main>
+  <script src="/javascript/logout.js"></script>
 </body>
 
 

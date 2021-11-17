@@ -47,7 +47,7 @@ router.get('/dash', (req, res) => {
     res.redirect('/login');
     return;
   }
-  res.render('/dash', { whiskeys });
+  // res.render('/dash', { whiskeys });
 })
 
 module.exports = router;
