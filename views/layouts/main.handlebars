@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Whisk(e)y Barrel</title> 
-    {{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <header class="hero">
-        <nav>
-          <a href="/">Home</a>
-          {{#if loggedIn}}
-          <a href="/dash">Dash View</a>
-          <a href="/logout" id="logout">Log Off</a>
-          {{else}}
-          <a href="/login">Log On to View</a>
-          {{/if}}
-        </nav>
-        <h1 class="app-title">
-          <a href="/">The Whisk(e)y Barrel</a>
-        </h1>
-        {{#if loggedIn}}
-        <div>
-          <a href="/dash">Hello, {{username}}</a>
-        </div>
-        {{/if}}
-      </header>
-      <main>
-        {{{ body }}}
-      </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Whisk(e)y Barrel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"
+    integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {{!--
+  <link rel="stylesheet" href="/stylesheets/style.css"> --}}
+</head>
+
+<body>
+  {{!-- <div class="wrapper">
+    <header class="hero">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dash">Dash View</a>
+        <a href="/login">Log In to View</a>
+      </nav>
+      <h1 class="app-title">
+        <a href="/">The Whisk(e)y Barrel</a>
+      </h1>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+  </div> --}}
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="true" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dash">Dash View</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In to View</a>
+        </li>
+      </ul>
     </div>
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
-  </body>
+    <div class="card-body">
+      <h5 class="card-title">The Whisk(e)y Barrel</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</body>
+
+
 </html>
