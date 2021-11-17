@@ -1,20 +1,25 @@
-<section>
-  <h2>{{username}}'s Barrel Stave</h2>
+<main class="card border-dark mb-3" style="max-width: 18re  <div class="card-header bg-success border-dark">
+    <section>
+      <h2>{{username}}'s Barrel Stave</h2>
 
-  <div>
-    
+      <div>
+
+      </div>
+    </section>
   </div>
-</section>
-
-{{#if whiskeys.length}}
-<section>
-  <h2>Your Bottles</h2>
-  <ul>
-    {{#each whiskeys as |whiskey|}}
-    <li>
-      {{> whiskey-info whiskey}}
-    </li>
-    {{/each}}
-  </ul>
-</section>
-{{/if}}
+  <div class="card-body">
+    {{#if whiskeys.length}}
+    <section>
+      <h2>Your Bottles</h2>
+      <ul>
+        {{#each whiskeys as |whiskey|}}
+        <li>
+          {{> whiskey-info whiskey}}
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+    {{/if}}
+  </div>
+  <div class="card-footer bg-success border-dark">Footer</div>
+</main>
