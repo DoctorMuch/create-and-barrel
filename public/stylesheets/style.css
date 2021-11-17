@@ -1,0 +1,10 @@
+ul {
+  list-style: none;
+}
+
+.new-btl {
+  border: solid 2px;
+  width: 40%;
+  text-align: left;
+  padding: 10px 5px;
+}
