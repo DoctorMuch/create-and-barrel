@@ -7,9 +7,8 @@
   <title>The Whisk(e)y Barrel</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css"
     integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  {{!--
-  <link rel="stylesheet" href="/stylesheets/style.css"> --}}
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -53,11 +52,15 @@
       <p class="card-text">Uisge Beatha > Aqua Vitae > Whiskey = Water of Life</p>
       <a href="/users" class="btn btn-primary">See Who is Here</a>
     </div>
-  </div>
-  <main class="card text-center">
+    <main class="card text-center">
     {{{body}}}
-  </main>
+    </main>
+  </div>
+  
   {{#if loggedIn}}
+  <section>
+    <button type="submit" class="btn btn-secondary">Add New Bottle</button>
+  </section>
   <script src="/javascript/logout.js"></script>
   {{/if}}
 </body>

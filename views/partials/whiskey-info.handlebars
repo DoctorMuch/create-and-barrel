@@ -1,7 +1,8 @@
-<article class=class="card" style="width: 12rem">
+<article class="card">
   <div class="card-body">
     <h2 class="card-title">{{whiskey_name}}</h2>
-    <p class="card-text">{{price}}</p>
-    <p class="card-text">{{created_at}}</p>
+    <p class="card-text">Price: ${{price}}</p>
+    <p class="card-text">Posted on {{created_at}}</p>
+    <p>by: {{user.username}}</p>
   </div>
 </article>
