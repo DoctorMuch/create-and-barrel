@@ -69,6 +69,10 @@ router.get('/dash', (req, res) => {
 });
 
 router.get('/users', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
   User.findAll({
     include: {
       model: Whiskey,
