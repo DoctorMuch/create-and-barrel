@@ -47,6 +47,7 @@ router.get('/dash', (req, res) => {
     res.redirect('/login');
     return;
   }
+  console.log(req.session);
   Whiskey.findAll({
     where: {
       id: req.session.id
@@ -59,6 +60,7 @@ router.get('/dash', (req, res) => {
   .then(dbWhiskeyData => {
     const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
     res.render('dash', { 
+      username: req.session.username,
       whiskeys,
       loggedIn: req.session.loggedIn });
   })

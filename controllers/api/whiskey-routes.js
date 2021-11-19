@@ -37,6 +37,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  req.body.user_id = req.session.user_id;
   Whiskey.create(req.body)
   .then(dbWhiskeyData => res.json(dbWhiskeyData))
   .catch(err => {

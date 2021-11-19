@@ -9,8 +9,7 @@ async function addBottleHandler(event) {
       method: 'post',
       body: JSON.stringify({
         whiskey_name,
-        price,
-        
+        price
       }),
       headers: { 'Content-Type': 'application/json'}
     });
