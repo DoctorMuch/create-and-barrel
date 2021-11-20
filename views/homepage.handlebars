@@ -1,10 +1,9 @@
-<ul class="whiskey-list">
+
+<ul class="d-flex">
+
   {{#each whiskeys as |whiskey|}}
   <li>
-    <article class="whiskey">
-      <div class="name">
-        <h2>{{whiskeys.whiskey_name}}</h2>
-      </div>
+    {{>whiskey-info whiskey}}
   </li>
   {{/each}}
 </ul>

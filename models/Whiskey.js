@@ -1,6 +1,6 @@
-const { Model, DataTypes, DECIMAL } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+// Adding a comment so that I can save the name correctly.
 class Whiskey extends Model { }
 
 Whiskey.init(

@@ -1,0 +1,34 @@
+<section class="card border-dark mb-3">
+  <h2>{{username}}'s Barrel Stave</h2>
+</section>
+<section class="card border-dark mb-3 new-btl">
+  <h3>Add New Bottle</h3>
+  <form class="new-btl-form">
+    <div>
+      <label for="bottle-name">Bottle</label>
+      <input type="text" id="bottle-name" />
+    </div>
+    <div>
+      <label for="price">Price</label>
+      <input type="text" id="bottle-price" />
+    </div>
+    <div>
+      <button type="submit">Add Bottle</button>
+    </div>
+  </form>
+</section>
+
+{{!-- {{#if whiskeys.length}} --}}
+<section>
+  <h3 id="bottle">Your Bottles</h3>
+  <ul>
+    {{#each whiskeys as |whiskey|}}
+    <li>
+      {{> whiskey-info whiskey}}
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{!-- {{/if}} --}}
+
+<script src="/javascript/add-bottle.js"></script>
