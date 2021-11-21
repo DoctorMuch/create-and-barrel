@@ -1,5 +1,21 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+}
 ul {
   list-style: none;
+}
+
+ul li {
+  padding: 5px;
+  flex-basis: 25%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 1.2rem;
 }
 
 .new-btl {
