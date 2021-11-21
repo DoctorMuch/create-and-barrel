@@ -1,11 +1,13 @@
-<form class="signup-form">
-  <div>
-    <label for="username-signup">Enter a Username:</label>
-    <input type="text" id="username-signup" />
+
+<form class="card col-4 border-dark text-center signUp-form">
+  <div class="mb-3">
+    <label for="username-signUp" class="form-label">Enter a Username:</label>
+    <input type="text" class="form-control" id="username-signUp">
   </div>
-  <div>
-    <label for="email-signup">Email:</label>
-    <input type="text" id="email-signup" />
+  <div class="mb-3">
+    <label for="email-signUp" class="form-label">Email address:</label>
+    <input type="email" class="form-control" id="email-signUp" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div>
     <label for="password-signup">Password:</label>
@@ -14,8 +16,11 @@
   <div>
     <button type="submit">Join the Barrel</button>
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <div>
+    <a href="/login">Already Signed Up? Click Here to Log On</a>
+  </div>
 </form>
-<div>
-  <a href="/login">Already Signed Up? Click Here to Log On</a>
-</div>
-<script src="/javascript/signup.js"></script> 
+
+<script src="/javascript/signup.js"></script>
+
