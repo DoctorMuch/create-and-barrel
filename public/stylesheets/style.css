@@ -18,6 +18,11 @@ h2 {
   font-size: 1.2rem;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .new-btl {
   border: solid 2px;
   width: 40%;
@@ -26,7 +31,8 @@ h2 {
 }
 
 .login-form,
-.signUp-form {
+.signUp-form,
+.new-btl-form {
   padding: 15px;
 }
 
