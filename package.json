@@ -4,8 +4,7 @@
   "description": "An inventory management application for users to login and see what whiskey they have on hand.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -32,6 +31,5 @@
     "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
-  },
-  "devDependencies": {}
+  }
 }
