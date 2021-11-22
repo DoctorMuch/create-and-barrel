@@ -64,7 +64,6 @@ router.get('/dash', (req, res) => {
     }
   })
   .then(dbWhiskeyData => {
-    console.log(dbWhiskeyData);
     const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
     res.render('dash', {
       user_id: req.session.user_id, 
@@ -84,13 +83,17 @@ router.get('/users', (req, res) => {
     return;
   }
   User.findAll({
+    attributes: [
+      'username'
+    ],
     include: {
       model: Whiskey,
-      attributes: ['whiskey_name', 'price', 'created_at']
+      attributes: ['whiskey_name']
     }
   })
   .then(dbUserData => {
     const users = dbUserData.map(user => user.get({ plain: true }));
+    console.log(users);
     res.render('roster', { users });
   })
 })
