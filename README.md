@@ -9,10 +9,10 @@ A simple application to let a user store and retrieve the whisk(e)y they have in
 * [Contact](#contact)
 
 ### About the Project
-(Screen shot)
+![Screen shot](./public/assets/images/Whisk(e)y_Barrel_home.png)
 
 ### Built With
-
+* HTML CSS Bootstrap
 * Node.js & Express.js
 * Handlebars
 * MySql2 & Sequelize
