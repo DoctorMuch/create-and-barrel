@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
     ]
   })
   .then(dbUserData => res.json(dbUserData))
+  res.render('roster', dbUserData[0]) 
   .catch(err => {
     console.log(err);
     res.status(500).json(err);

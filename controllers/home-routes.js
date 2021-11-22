@@ -77,25 +77,25 @@ router.get('/dash', (req, res) => {
   });
 });
 
-router.get('/users', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-  }
-  User.findAll({
-    attributes: [
-      'username'
-    ],
-    include: {
-      model: Whiskey,
-      attributes: ['whiskey_name']
-    }
-  })
-  .then(dbUserData => {
-    const users = dbUserData.map(user => user.get({ plain: true }));
-    console.log(users);
-    res.render('roster', { users });
-  })
-})
+// router.get('/users', (req, res) => {
+//   if (!req.session.loggedIn) {
+//     res.redirect('/login');
+//     return;
+//   }
+//   User.findAll({
+//     attributes: [
+//       'username'
+//     ],
+//     include: {
+//       model: Whiskey,
+//       attributes: ['whiskey_name']
+//     }
+//   })
+//   .then(dbUserData => {
+//     const users = dbUserData.map(user => user.get({ plain: true }));
+//     console.log(users);
+//     res.render('roster', { users });
+//   })
+// })
 
 module.exports = router;
