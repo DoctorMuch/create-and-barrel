@@ -58,7 +58,7 @@ router.get('/dash', (req, res) => {
     }
   })
   .then(dbWhiskeyData => {
-    const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
+    const whiskeys = dbWhiskeyData.filter(whiskey => whiskey.get({ plain: true }));
     res.render('dash', { 
       username: req.session.username,
       whiskeys,
