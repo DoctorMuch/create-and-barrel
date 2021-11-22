@@ -50,16 +50,24 @@ router.get('/dash', (req, res) => {
   console.log(req.session);
   Whiskey.findAll({
     where: {
-      id: req.session.id
+      user_id: req.session.user_id
     },
+    attributes: [
+      'id',
+      'whiskey_name',
+      'price',
+      'created_at'
+    ],
     include: {
       model: User,
       attributes: ['username']
     }
   })
   .then(dbWhiskeyData => {
-    const whiskeys = dbWhiskeyData.filter(whiskey => whiskey.get({ plain: true }));
-    res.render('dash', { 
+    console.log(dbWhiskeyData);
+    const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
+    res.render('dash', {
+      user_id: req.session.user_id, 
       username: req.session.username,
       whiskeys,
       loggedIn: req.session.loggedIn });
