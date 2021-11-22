@@ -48,6 +48,18 @@ h2 {
 }
 
 #bottle {
-  background-color: rgb(112, 87, 22);
+  background-color: rgba(112, 87, 22, 0.6);
+  color: #ffff;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-link {
+  color: #ffff;
+}
+
+.card-title {
   color: #ffff;
 }

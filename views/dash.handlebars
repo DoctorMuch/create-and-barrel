@@ -1,27 +1,27 @@
-<section class="card border-dark mb-3">
+<section class="card border-dark my-3 py-2">
   <h2>{{username}}'s Barrel Stave</h2>
 </section>
-<section class="card border-dark mb-3 new-btl">
-  <h3>Add New Bottle</h3>
+<section class="card col-4 border-dark mb-3 new-btl">
+  <h3 class="card-header mb-2">Add New Bottle</h3>
   <form class="new-btl-form">
     <div>
-      <label for="bottle-name">Bottle</label>
-      <input type="text" id="bottle-name" />
+      <label for="bottle-name" class="form-label">Bottle</label>
+      <input type="text" class="form-control mb-3" id="bottle-name" />
     </div>
     <div>
-      <label for="price">Price</label>
-      <input type="text" id="bottle-price" />
+      <label for="price" class="form-label">Price</label>
+      <input type="text" class="form-control mb-3" id="bottle-price" />
     </div>
     <div>
-      <button type="submit">Add Bottle</button>
+      <button type="submit" class="btn btn-primary">Add Bottle</button>
     </div>
   </form>
 </section>
 
-{{!-- {{#if whiskeys.length}} --}}
+{{#if whiskeys.length}}
 <section>
-  <h3 id="bottle">Your Bottles</h3>
-  <ul>
+  <h3 class="py-3" id="bottle">Your Bottles</h3>
+  <ul class="row col-4">
     {{#each whiskeys as |whiskey|}}
     <li>
       {{> whiskey-info whiskey}}
@@ -29,6 +29,6 @@
     {{/each}}
   </ul>
 </section>
-{{!-- {{/if}} --}}
+{{/if}}
 
 <script src="/javascript/add-bottle.js"></script>

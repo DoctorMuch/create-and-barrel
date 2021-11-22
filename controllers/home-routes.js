@@ -50,8 +50,14 @@ router.get('/dash', (req, res) => {
   console.log(req.session);
   Whiskey.findAll({
     where: {
-      id: req.session.id
+      user_id: req.session.user_id
     },
+    attributes: [
+      'id',
+      'whiskey_name',
+      'price',
+      'created_at'
+    ],
     include: {
       model: User,
       attributes: ['username']
@@ -59,7 +65,8 @@ router.get('/dash', (req, res) => {
   })
   .then(dbWhiskeyData => {
     const whiskeys = dbWhiskeyData.map(whiskey => whiskey.get({ plain: true }));
-    res.render('dash', { 
+    res.render('dash', {
+      user_id: req.session.user_id, 
       username: req.session.username,
       whiskeys,
       loggedIn: req.session.loggedIn });
@@ -70,21 +77,25 @@ router.get('/dash', (req, res) => {
   });
 });
 
-router.get('/users', (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-    return;
-  }
-  User.findAll({
-    include: {
-      model: Whiskey,
-      attributes: ['whiskey_name', 'price', 'created_at']
-    }
-  })
-  .then(dbUserData => {
-    const users = dbUserData.map(user => user.get({ plain: true }));
-    res.render('roster', { users });
-  })
-})
+// router.get('/users', (req, res) => {
+//   if (!req.session.loggedIn) {
+//     res.redirect('/login');
+//     return;
+//   }
+//   User.findAll({
+//     attributes: [
+//       'username'
+//     ],
+//     include: {
+//       model: Whiskey,
+//       attributes: ['whiskey_name']
+//     }
+//   })
+//   .then(dbUserData => {
+//     const users = dbUserData.map(user => user.get({ plain: true }));
+//     console.log(users);
+//     res.render('roster', { users });
+//   })
+// })
 
 module.exports = router;

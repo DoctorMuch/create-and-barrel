@@ -41,21 +41,19 @@
         <h1 class="card-title">The Whisk(e)y Barrel</h1>
       </a>
       <h2 class="card-text text-light">Uisge Beatha > Aqua Vitae > Whiskey = Water of Life</h2>
-      <a href="/users" class="btn btn-primary">See Who is Here</a>
+      {{!-- Going to Pull a Roster of current users --}}
+      {{!-- <a href="/users" class="btn btn-primary" id="roster">See Who is Here</a> --}}
     </div>
     <main>
       <div class="container">
-      {{{body}}}
+        {{{body}}}
       </div>
     </main>
-  </div>
 
-  {{#if loggedIn}}
-  <section>
-    <button type="submit" class="btn btn-secondary">Add New Bottle</button>
-  </section>
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>
